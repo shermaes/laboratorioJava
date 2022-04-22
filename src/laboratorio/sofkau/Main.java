@@ -1,9 +1,15 @@
 package laboratorio.sofkau;
 
-public class Main {
+import java.io.File;
+import java.io.FileNotFoundException;
 
-    public static void main(String[] args) {
-	Game juego = new Game();
-    juego.startGame();
+public class Main {
+    public static void main(String[] args) throws FileNotFoundException {
+        Game game = new Game();
+        game.startGame();
+        Historial historial = new Historial();
+        historial.guardarPlayer(game.player, game.premio);
+        historial.leerHistorial();
+
     }
 }
