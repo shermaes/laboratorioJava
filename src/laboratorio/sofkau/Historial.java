@@ -1,9 +1,7 @@
 package laboratorio.sofkau;
 
-
 import java.io.*;
 import java.util.Scanner;
-
 
 public class Historial extends Game {
     static File archivo;// Para manipular al archivo, static hace referencia a constante
@@ -11,8 +9,7 @@ public class Historial extends Game {
     PrintWriter linea;//Para escribir en el archivo
 
     public void guardarPlayer(String player, int premio) {
-        //archivo = new File("usuarios.txt");//Preparando al archivo
-        //if (archivo.exists()) {
+
         try {
             File archivo = new File("texto.txt");
             FileWriter escribir = new FileWriter(archivo, true);
@@ -28,6 +25,8 @@ public class Historial extends Game {
 
       }
 
+
+
     public void leerHistorial() throws FileNotFoundException {
         try {
             File doc = new File("texto.txt");
@@ -38,5 +37,4 @@ public class Historial extends Game {
         } catch (Exception e) {
             System.out.println("No hay archivo");
         }
-    }
-}
+    }}

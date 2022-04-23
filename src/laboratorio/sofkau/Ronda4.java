@@ -45,14 +45,11 @@ public class Ronda4 extends Banco implements IRonda {
             System.out.println("Oops esa no era la respuesta");
             loser();
         }
-        premio=premio+100;
         return resultado;
     }
 
     @Override
     public void loser() {
-        resultado = 0;
-        premio =0;
         System.out.println("Estuviste muy cerca, mejor suerte la proxima");
     }
 }

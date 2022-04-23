@@ -46,7 +46,6 @@ public class Ronda3 extends Banco implements IRonda {
             loser();
             resultado = 0;
         }
-        premio=premio+100;
         return resultado;
     }
 

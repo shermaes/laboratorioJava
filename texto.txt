@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 Nombre: July , Puntaje: 400
 Nombre: fwf , Puntaje: 0
@@ -8,3 +9,8 @@ Nombre: vqvibir , Puntaje: 200
 Nombre: fqefqref , Puntaje: 0
 Nombre: idbiuewb	 , Puntaje: 500
 Nombre: ergarg , Puntaje: 300
+=======
+HISTORIAL DE PUNTUACION
+-----------------------
+Nombre: Sher , Puntaje: 100
+>>>>>>> c043b2691c2fb9de8a9dd8f970f0822d87155f06
