@@ -6,8 +6,6 @@ public abstract class Banco {
     String respuestaC;
     Integer resultado;
 
-    // metodo que da el mensaje de que se perdio el juego
-    public void loser() {
-    }
+    public void loser() {}
 
 }

@@ -1,5 +1,7 @@
 package laboratorio.sofkau;
 
+import laboratorio.sofkau.IRonda;
+
 import java.util.ArrayList;
 import java.util.List;
 

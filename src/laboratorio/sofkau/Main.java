@@ -7,7 +7,7 @@ public class Main {
         Game game = new Game();
         game.startGame();
         Historial historial = new Historial();
-        historial.guardarPlayer(game.player, game.premio);
+        historial.guardarPlayer(game.player, game.getPremio());
         historial.leerHistorial();
 
 }}

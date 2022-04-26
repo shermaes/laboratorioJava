@@ -20,58 +20,59 @@ public class Game extends Jugador {
         System.out.println("Los puntos a conseguir por cada ronda son: 100");
         System.out.println(SEPARADOR);
         ronda1.questions();
-        if (ronda1.resultado == VALIDA) {
-            premio = 100;
-            preguntarSalida();
+        salidor=ronda1.resultado;
+        aumentarPuntaje(salidor);
+        preguntarSalida();
+        if (salidor == 1) {
             System.out.println(SEPARADOR);
             ronda2.questions();
-            premio = premio +100;
             System.out.println(SEPARADOR);
             salidor = ronda2.resultado;
+            aumentarPuntaje(salidor);
             preguntarSalida();
         }
-        if (salidor == VALIDA) {
+        if (salidor == 1) {
             System.out.println(SEPARADOR);
             ronda3.questions();
-            premio = premio +100;
             System.out.println(SEPARADOR);
             salidor = ronda3.resultado;
+            aumentarPuntaje(salidor);
             preguntarSalida();
         }
-        if (salidor == VALIDA) {
+        if (salidor == 1) {
             System.out.println(SEPARADOR);
             ronda4.questions();
-            premio = premio +100;
             System.out.println(SEPARADOR);
             salidor = ronda4.resultado;
+            aumentarPuntaje(salidor);
             preguntarSalida();
         }
-        if (salidor == VALIDA) {
+        if (salidor == 1) {
             System.out.println(SEPARADOR);
             ronda5.questions();
-            premio = premio +100;
             System.out.println(SEPARADOR);
             salidor = ronda5.resultado;
-            if (salidor == VALIDA) {
+            aumentarPuntaje(salidor);
+            if (salidor == 1) {
                 System.out.println(SEPARADOR);
                 imprimirAcumulado();
-                winner();
-
             }
         }
     }
 
 
-    public void confirmExit() {
-        System.out.println(premio);
+    public int confirmExit() {
+        System.out.println(getPremio());
         System.out.println("Desea retirarse con lo que lleva acumulado?\n Indique 1 para si o 0 para no");
         salida = sc.nextInt();
-        if (salida == VALIDA) {
-            System.out.println("Usted ha salido del juego con una puntuacion de: " + premio);
+        if (salida == 1) {
+            System.out.println("Usted ha salido del juego con una puntuacion de: " + getPremio());
+            salidor=0;
             continuar();
         } else {
-            System.out.println("Usted ha pasado a la " + ronda + " ronda con " + premio + " puntos");
+            System.out.println("Usted ha pasado a la " + ronda + " ronda con " + getPremio() + " puntos");
         }
+        return salidor;
     }
 
     private void preguntarSalida() {
@@ -83,7 +84,7 @@ public class Game extends Jugador {
 
     protected void imprimirAcumulado() {
         ronda = ronda + 1;
-        System.out.println("Sigamos a la siguiente ronda " + player + " tienes " + premio + " puntos acumulados");
+        System.out.println("Sigamos a la siguiente ronda " + player + " tienes " + getPremio() + " puntos acumulados");
         System.out.println(SEPARADOR);
     }
 
@@ -92,7 +93,7 @@ public class Game extends Jugador {
     public void continuar() {
         System.out.println("Confirme que dejara de jugar presionando cualquier numero menos 1");
         k = sc.nextInt();
-        if (k == VALIDA) {
+        if (k == 1) {
             startGame();
         } else {
             salidor = 3;
@@ -101,8 +102,15 @@ public class Game extends Jugador {
 
     }
 
+public void aumentarPuntaje(int salidor){
 
-
+        if (salidor ==0){
+            setPremio(0);
+        }else{
+            a=a+100;
+            setPremio(a);
+        }
+}
 
 }
 
